@@ -1,5 +1,5 @@
 %define name gnome-desktop-sharp
-%define version 2.19.0
+%define version 2.19.1
 %define release %mkrel 1
 %define gtk_sharp 2.11.0
 %define gnome_sharp 2.19.90
@@ -10,7 +10,6 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
-Patch: gnome-desktop-sharp-2.19.0-gnome-sharp-version.patch
 Patch1: gnome-desktop-sharp-2.19.0-dllmap.patch
 License: LGPLv2
 Group: System/Libraries
@@ -34,7 +33,6 @@ This contains C# language bindings for some of the GNOME desktop libraries.
 
 %prep
 %setup -q
-%patch -p1
 %patch1 -p1
 autoconf
 
