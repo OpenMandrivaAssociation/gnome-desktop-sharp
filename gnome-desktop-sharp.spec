@@ -19,7 +19,7 @@ BuildRequires:	gtk-sharp2-devel >= %{gtk_sharp}
 BuildRequires:	gtk-sharp2 >= %{gtk_sharp}
 BuildRequires:	glade-sharp2 >= %{gtk_sharp}
 BuildRequires:	librsvg-devel >= 2.18.2
-BuildRequires:	libgtkhtml-3.14-devel >= 3.16.0
+BuildRequires:	gtkhtml-3.14-devel >= 3.16.0
 BuildRequires:	vte-devel >= 0.16.9
 BuildRequires:	libnautilus-cd-burner-devel >= 2.20.0
 BuildRequires:	gnome-desktop-devel
