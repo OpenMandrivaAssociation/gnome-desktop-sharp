@@ -1,6 +1,6 @@
 %define name gnome-desktop-sharp
 %define version 2.20.1
-%define release %mkrel 3
+%define release %mkrel 4
 %define gtk_sharp 2.12.0
 %define gnome_sharp 2.20.0
 %define monodir %_prefix/lib/mono
