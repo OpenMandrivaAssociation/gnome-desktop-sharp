@@ -1,7 +1,7 @@
 %define name gnome-desktop-sharp
-%define version 2.20.1
-%define release %mkrel 4
-%define gtk_sharp 2.12.0
+%define version 2.23.90
+%define release %mkrel 1
+%define gtk_sharp 2.12.2
 %define gnome_sharp 2.20.0
 %define monodir %_prefix/lib/mono
 
@@ -23,6 +23,7 @@ BuildRequires:	librsvg-devel >= 2.18.2
 BuildRequires:	gtkhtml-3.14-devel >= 3.16.0
 BuildRequires:	vte-devel >= 0.16.9
 BuildRequires:	libnautilus-cd-burner-devel >= 2.20.0
+BuildRequires:	gnome-panel-devel
 BuildRequires:	gnome-desktop-devel
 BuildRequires:	libwnck-devel >= 2.20.0
 BuildRequires:	gtksourceview-devel >= 2.0.0
@@ -42,10 +43,18 @@ Requires: nautilusburn-sharp = %version
 Requires: rsvg-sharp = %version
 Requires: wnck-sharp = %version
 Requires: gtksourceview-sharp2 = %version
+Requires: gnome-panel-sharp = %version
 
 %description devel
 This is a C# language binding for the GNOME desktop. It contains all
 files that are needed to build against %{name}.
+
+%package -n gnome-panel-sharp
+Group: System/Libraries
+Summary: C# language binding for the GNOME panel
+
+%description -n gnome-panel-sharp
+This contains the C# language binding for the GNOME panel.
 
 %package -n vte-sharp
 Group: System/Libraries
@@ -111,6 +120,14 @@ rm -rf %{buildroot}
 %doc README NEWS  HACKING AUTHORS
 %monodir/gac/gnomedesktop-sharp
 %monodir/gnomedesktop-sharp-2.20
+%monodir/gac/gnome-print-sharp
+%monodir/gnome-print-sharp-2.18
+
+%files -n gnome-panel-sharp
+%defattr(-,root,root)
+%monodir/gac/gnome-panel-sharp
+%_libdir/libgnomepanelsharpglue-2.so
+%monodir/gnome-panel-sharp-2.24
 
 %files -n vte-sharp
 %defattr(-,root,root)
@@ -127,22 +144,25 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %monodir/gac/wnck-sharp
 %monodir/wnck-sharp-2.20
+%_libdir/libwncksharpglue-2.so
 
 %files -n gtksourceview-sharp2
 %defattr(-,root,root)
 %monodir/gac/gtksourceview2-sharp
 %monodir/gtksourceview2-sharp-2.0
-
+%_libdir/libgtksourceview2sharpglue-2.so
 
 %files -n nautilusburn-sharp
 %defattr(-,root,root)
 %monodir/gac/nautilusburn-sharp
 %monodir/nautilusburn-sharp-2.20
+%_libdir/libnautilusburnsharpglue-2.so
 
 %files -n gtkhtml-sharp
 %defattr(-,root,root)
 %monodir/gac/gtkhtml-sharp
 %monodir/gtkhtml-sharp-3.14
+%_libdir/libgtkhtmlsharpglue-2.so
 
 %files devel
 %defattr(-,root,root)
@@ -154,6 +174,8 @@ rm -rf %{buildroot}
 %_libdir/pkgconfig/rsvg2-sharp-2.0.pc
 %_libdir/pkgconfig/vte-sharp-0.16.pc
 %_libdir/pkgconfig/wnck-sharp-1.0.pc
+%_libdir/pkgconfig/gnome-panel-sharp-2.24.pc
+%_libdir/pkgconfig/gnome-print-sharp-2.18.pc
 %_datadir/gnomedesktop-sharp
 %_datadir/gtkhtml-sharp
 %_datadir/gtksourceview2-sharp
@@ -161,6 +183,9 @@ rm -rf %{buildroot}
 %_datadir/rsvg2-sharp
 %_datadir/vte-sharp
 %_datadir/wnck-sharp
+%_datadir/gnome-panel-sharp
+%_datadir/gnome-print-sharp
+
 
 
 
