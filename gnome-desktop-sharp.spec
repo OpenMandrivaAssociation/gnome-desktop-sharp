@@ -24,6 +24,7 @@ BuildRequires:	gtkhtml-3.14-devel >= 3.16.0
 BuildRequires:	vte-devel >= 0.16.9
 BuildRequires:	libnautilus-cd-burner-devel >= 2.20.0
 BuildRequires:	gnome-panel-devel
+BuildRequires:	libgnomeprintui-devel
 BuildRequires:	gnome-desktop-devel
 BuildRequires:	libwnck-devel >= 2.20.0
 BuildRequires:	gtksourceview-devel >= 2.0.0
@@ -44,10 +45,18 @@ Requires: rsvg-sharp = %version
 Requires: wnck-sharp = %version
 Requires: gtksourceview-sharp2 = %version
 Requires: gnome-panel-sharp = %version
+Requires: gnome-print-sharp = %version
 
 %description devel
 This is a C# language binding for the GNOME desktop. It contains all
 files that are needed to build against %{name}.
+
+%package -n gnome-print-sharp
+Group: System/Libraries
+Summary: C# language binding for the GNOME print library
+
+%description -n gnome-print-sharp
+This contains the C# language binding for the GNOME print library.
 
 %package -n gnome-panel-sharp
 Group: System/Libraries
@@ -120,6 +129,9 @@ rm -rf %{buildroot}
 %doc README NEWS  HACKING AUTHORS
 %monodir/gac/gnomedesktop-sharp
 %monodir/gnomedesktop-sharp-2.20
+
+%files -n gnome-print-sharp
+%defattr(-,root,root)
 %monodir/gac/gnome-print-sharp
 %monodir/gnome-print-sharp-2.18
 
