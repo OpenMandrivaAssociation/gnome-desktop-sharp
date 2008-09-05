@@ -1,6 +1,6 @@
 %define name gnome-desktop-sharp
 %define version 2.23.90
-%define release %mkrel 2
+%define release %mkrel 3
 %define gtk_sharp 2.12.2
 %define gnome_sharp 2.20.0
 %define monodir %_prefix/lib/mono
@@ -47,6 +47,7 @@ Requires: wnck-sharp = %version
 Requires: gtksourceview-sharp2 = %version
 Requires: gnome-panel-sharp = %version
 Requires: gnome-print-sharp = %version
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description devel
 This is a C# language binding for the GNOME desktop. It contains all
@@ -69,6 +70,7 @@ This contains the C# language binding for the GNOME panel.
 %package -n vte-sharp
 Group: System/Libraries
 Summary: C# language binding for VTE
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n vte-sharp
 This contains the C# language binding for the VTE library.
@@ -76,6 +78,7 @@ This contains the C# language binding for the VTE library.
 %package -n rsvg-sharp
 Group: System/Libraries
 Summary: C# language binding for librsvg
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n rsvg-sharp
 This contains the C# language binding for the librsvg library.
@@ -83,6 +86,7 @@ This contains the C# language binding for the librsvg library.
 %package -n wnck-sharp
 Group: System/Libraries
 Summary: C# language binding for libwnck
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n wnck-sharp
 This contains the C# language binding for the libwnck library.
@@ -90,6 +94,7 @@ This contains the C# language binding for the libwnck library.
 %package -n nautilusburn-sharp
 Group: System/Libraries
 Summary: C# language binding for the Nautilus CD burner
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n nautilusburn-sharp
 This contains the C# language binding for the Nautilus CD burner library.
@@ -97,6 +102,7 @@ This contains the C# language binding for the Nautilus CD burner library.
 %package -n gtkhtml-sharp
 Group: System/Libraries
 Summary: C# language binding for gtkhtml
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n gtkhtml-sharp
 This contains the C# language binding for the gtkhtml library.
@@ -104,6 +110,7 @@ This contains the C# language binding for the gtkhtml library.
 %package -n gtksourceview-sharp2
 Group: System/Libraries
 Summary: C# language binding for gtksourceview 2
+Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n gtksourceview-sharp2
 This contains the C# language binding for the gtksourceview 2 library.
