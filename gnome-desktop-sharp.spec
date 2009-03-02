@@ -1,6 +1,6 @@
 %define name gnome-desktop-sharp
-%define version 2.24.0
-%define release %mkrel 3
+%define version 2.26.0
+%define release %mkrel 1
 %define gtk_sharp 2.12.2
 %define gnome_sharp 2.24.0
 %define monodir %_prefix/lib/mono
@@ -10,7 +10,6 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
-Patch: gnome-desktop-sharp-2.24.0-libgnome-desktop-major.patch
 License: LGPLv2
 Group: System/Libraries
 Url: http://www.mono-project.com/Main_Page
@@ -117,7 +116,6 @@ This contains the C# language binding for the gtksourceview 2 library.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 %configure2_5x
