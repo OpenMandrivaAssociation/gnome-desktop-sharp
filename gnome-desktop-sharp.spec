@@ -1,9 +1,13 @@
 %define name gnome-desktop-sharp
 %define version 2.26.0
-%define release %mkrel 1
+%define release %mkrel 2
 %define gtk_sharp 2.12.2
 %define gnome_sharp 2.24.0
 %define monodir %_prefix/lib/mono
+%define build_nautilusburn 0
+%if %mdvver <= 200900
+%define build_nautilusburn 1
+%endif
 
 Summary: C# language bindings for GNOME desktop
 Name: %{name}
@@ -21,7 +25,9 @@ BuildRequires:	glade-sharp2 >= %{gtk_sharp}
 BuildRequires:	librsvg-devel >= 2.18.2
 BuildRequires:	gtkhtml-3.14-devel >= 3.16.0
 BuildRequires:	vte-devel >= 0.16.9
+%if %build_nautilusburn
 BuildRequires:	libnautilus-cd-burner-devel >= 2.20.0
+%endif
 BuildRequires:	gnome-panel-devel
 BuildRequires:	libgnomeprintui-devel
 BuildRequires:	gnome-desktop-devel
@@ -39,7 +45,9 @@ Group: Development/Other
 Requires: %name = %version
 Requires: gtkhtml-sharp = %version
 Requires: vte-sharp = %version
+%if %build_nautilusburn
 Requires: nautilusburn-sharp = %version
+%endif
 Requires: rsvg-sharp = %version
 Requires: wnck-sharp = %version
 Requires: gtksourceview-sharp2 = %version
@@ -89,6 +97,7 @@ Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 %description -n wnck-sharp
 This contains the C# language binding for the libwnck library.
 
+%if %build_nautilusburn
 %package -n nautilusburn-sharp
 Group: System/Libraries
 Summary: C# language binding for the Nautilus CD burner
@@ -96,6 +105,7 @@ Conflicts: gnome-desktop-sharp < 2.20.1-2mdv
 
 %description -n nautilusburn-sharp
 This contains the C# language binding for the Nautilus CD burner library.
+%endif
 
 %package -n gtkhtml-sharp
 Group: System/Libraries
@@ -169,11 +179,13 @@ rm -rf %{buildroot}
 %monodir/gtksourceview2-sharp-2.0
 %_libdir/libgtksourceview2sharpglue-2.so
 
+%if %build_nautilusburn
 %files -n nautilusburn-sharp
 %defattr(-,root,root)
 %monodir/gac/nautilusburn-sharp
 %monodir/nautilusburn-sharp-2.20
 %_libdir/libnautilusburnsharpglue-2.so
+%endif
 
 %files -n gtkhtml-sharp
 %defattr(-,root,root)
@@ -187,16 +199,18 @@ rm -rf %{buildroot}
 %_libdir/pkgconfig/gnome-desktop-sharp-2.0.pc
 %_libdir/pkgconfig/gtkhtml-sharp-3.14.pc
 %_libdir/pkgconfig/gtksourceview2-sharp.pc
-%_libdir/pkgconfig/nautilusburn-sharp.pc
 %_libdir/pkgconfig/rsvg2-sharp-2.0.pc
 %_libdir/pkgconfig/vte-sharp-0.16.pc
 %_libdir/pkgconfig/wnck-sharp-1.0.pc
 %_libdir/pkgconfig/gnome-panel-sharp-2.24.pc
 %_libdir/pkgconfig/gnome-print-sharp-2.18.pc
+%if %build_nautilusburn
+%_libdir/pkgconfig/nautilusburn-sharp.pc
+%_datadir/nautilusburn-sharp
+%endif
 %_datadir/gnomedesktop-sharp
 %_datadir/gtkhtml-sharp
 %_datadir/gtksourceview2-sharp
-%_datadir/nautilusburn-sharp
 %_datadir/rsvg2-sharp
 %_datadir/vte-sharp
 %_datadir/wnck-sharp
