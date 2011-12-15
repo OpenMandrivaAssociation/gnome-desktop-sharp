@@ -29,7 +29,7 @@ BuildRequires:	vte-devel >= 0.16.9
 %if %build_nautilusburn
 BuildRequires:	libnautilus-cd-burner-devel >= 2.20.0
 %endif
-BuildRequires:	gnome-panel-devel
+BuildRequires:	libpanel-applet-2-devel
 BuildRequires:	libgnomeprintui-devel
 BuildRequires:	gnome-desktop-devel
 BuildRequires:	libwnck-devel >= 2.20.0
