@@ -5,7 +5,7 @@
 Summary:	C# language bindings for GNOME desktop
 Name:		gnome-desktop-sharp
 Version:	2.26.0
-Release:	10
+Release:	11
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.mono-project.com/Main_Page
