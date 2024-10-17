@@ -8,7 +8,7 @@ Version:	2.26.0
 Release:	11
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://www.mono-project.com/Main_Page
+Url:		https://www.mono-project.com/Main_Page
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 Patch0:		gnome-desktop-sharp-2.26.0-new-libgnomedesktop-major.patch
 BuildRequires:	mono-devel
