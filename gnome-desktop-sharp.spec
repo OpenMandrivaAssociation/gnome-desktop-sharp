@@ -11,6 +11,11 @@ Group:		System/Libraries
 Url:		https://www.mono-project.com/Main_Page
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 Patch0:		gnome-desktop-sharp-2.26.0-new-libgnomedesktop-major.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	mono-devel
 BuildRequires:	gtk-sharp2-devel >= %{gtk_sharp}
 BuildRequires:	gtk-sharp2 >= %{gtk_sharp}
